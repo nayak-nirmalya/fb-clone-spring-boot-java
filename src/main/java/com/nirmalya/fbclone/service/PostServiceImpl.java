@@ -57,6 +57,6 @@ public class PostServiceImpl implements PostService {
                                 .image(postEntity.getImage())
                                 .build())
                 .collect(Collectors.toList());
-        return null;
+        return posts;
     }
 }
