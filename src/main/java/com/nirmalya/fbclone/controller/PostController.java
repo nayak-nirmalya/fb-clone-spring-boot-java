@@ -26,6 +26,7 @@ public class PostController {
         String post = requestParams.get("post");
         String name = requestParams.get("name");
         String file = requestParams.get("file");
+        String image = requestParams.get("image");
 
         Post postTemp = Post.builder()
                 .profilePic(profilePic)
@@ -33,6 +34,7 @@ public class PostController {
                 .post(post)
                 .name(name)
                 .file(file)
+                .image(image)
                 .timeStamp(new Date().toString())
                 .build();
 

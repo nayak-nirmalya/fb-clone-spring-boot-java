@@ -26,10 +26,10 @@ public class PostServiceImpl implements PostService {
             PostEntity postEntity = new PostEntity();
             BeanUtils.copyProperties(post, postEntity);
 
-            if (post.getFile() != null && !post.getFile().equalsIgnoreCase("null"))
-                postEntity.setImage(post.getFile());
-            else
-                postEntity.setImage(null);
+//            if (post.getFile() != null && !post.getFile().equalsIgnoreCase("null"))
+//                postEntity.setImage(post.getFile());
+//            else
+//                postEntity.setImage(null);
 
             postEntity = postEntityRepository.save(postEntity);
             post.setId(postEntity.getId());
