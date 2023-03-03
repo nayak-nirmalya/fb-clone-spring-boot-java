@@ -5,6 +5,7 @@ import com.nirmalya.fbclone.service.PostService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 @CrossOrigin(value = "http://localhost:3000")
@@ -37,5 +38,10 @@ public class PostController {
 
         postTemp = postService.addPost(postTemp);
         return postTemp;
+    }
+
+    @GetMapping
+    public List<Post> getPost() {
+        return postService.getPost();
     }
 }
