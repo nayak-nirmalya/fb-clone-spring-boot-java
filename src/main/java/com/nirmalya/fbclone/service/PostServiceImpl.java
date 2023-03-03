@@ -4,6 +4,7 @@ import com.nirmalya.fbclone.entity.PostEntity;
 import com.nirmalya.fbclone.model.Post;
 import com.nirmalya.fbclone.repository.PostEntityRepository;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -43,7 +44,9 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<Post> getPost() {
-        List<PostEntity> postEntities = postEntityRepository.findAll();
+        List<PostEntity> postEntities = postEntityRepository.findAll(
+                Sort.by(Sort.Direction.DESC, "timeStamp")
+        );
         List<Post> posts = new ArrayList<>();
         posts = postEntities.stream()
                 .map(postEntity ->
